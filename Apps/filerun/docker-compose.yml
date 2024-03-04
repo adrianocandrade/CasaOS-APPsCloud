@@ -60,6 +60,6 @@ x-casaos:
       en_us: |
         Attention: Require MYSQL Database to complete installation.
       pt_br: |
-        Atenção: Reque Banco de dados MYSQL para finalização da instalação. 
+        Atenção: Requer Banco de dados MYSQL para finalização da instalação. 
   category: Cloud
   port_map: '3386'

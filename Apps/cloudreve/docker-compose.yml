@@ -53,5 +53,11 @@ x-casaos:
   title:
     en_us: Cloudreve
     pt_br: Cloudreve
+  tips:
+    before_install:
+      en_us: |
+        Attention: Require MYSQL Database to complete installation.
+      pt_br: |
+        Atenção: Requer Banco de dados MYSQL para finalização da instalação. 
   category: Cloud
   port_map: '5212'
