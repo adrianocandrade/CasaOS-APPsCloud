@@ -1,34 +1,37 @@
 name: cloudreve
 services:
-    cloudreve:
-        environment:
-            PGID: "1000"
-            PUID: "1000"
-            TERM: xterm
-            TZ: America/Sao_Paulo
-        image: xavierniu/cloudreve:latest
-        network_mode: default
-        ports:
-            - target: 5212
-              published: "5212"
-              protocol: tcp
-        restart: unless-stopped
-        volumes:
-            - type: bind
-              source: /DATA/AppData/cloudreve/temp_data
-              target: /temp_data
-            - type: bind
-              source: /DATA/AppData/cloudreve/uploads
-              target: /cloudreve/uploads
-            - type: bind
-              source: /DATA/AppData/cloudreve/config
-              target: /cloudreve/config
-            - type: bind
-              source: /DATA/AppData/cloudreve/cloudreve/db
-              target: /cloudreve/cloudreve/db
-            - type: bind
-              source: /DATA/AppData/cloudreve/avatar
-              target: /ccloudreve/avatar
+  cloudreve:
+    environment:
+      PGID: "1000"
+      PUID: "1000"
+      TERM: xterm
+      TZ: America/Sao_Paulo
+    image: xavierniu/cloudreve:latest
+    network_mode: default
+    ports:
+      - target: 5212
+        published: "5212"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/cloudreve/temp_data
+        target: /temp_data
+      - type: bind
+        source: /DATA/AppData/cloudreve/uploads
+        target: /cloudreve/uploads
+      - type: bind
+        source: /DATA/AppData/cloudreve/config
+        target: /cloudreve/config
+      - type: bind
+        source: /DATA/AppData/cloudreve/cloudreve/db
+        target: /cloudreve/db
+      - type: bind
+        source: /DATA/AppData/cloudreve/avatar
+        target: /cloudreve/avatar
+      - type: bind
+        source: /DATA/AppData/cloudreve/downloads
+        target: /downloads
 x-casaos:
   architectures:
     - amd64
