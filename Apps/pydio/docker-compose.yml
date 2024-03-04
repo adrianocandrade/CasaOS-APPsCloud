@@ -20,10 +20,10 @@ services:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: casaos
-      MYSQL_DATABASE: casaos
-      MYSQL_USER: casaos
-      MYSQL_PASSWORD: casaos
+      MYSQL_ROOT_PASSWORD: pydiocasaos
+      MYSQL_DATABASE: pydio
+      MYSQL_USER: pydio
+      MYSQL_PASSWORD: pydiocasaos
     ports:
       - target: 3306
         published: '33066'
