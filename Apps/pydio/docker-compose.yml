@@ -43,7 +43,7 @@ x-casaos:
   tagline:
     en_us: Pydio Cells is a document sharing and collaboration platform that puts you in full control of your documents in a way Saas solutions can’t - combining fast performance, huge file transfer sizes, granular security, and advanced workflow automations in a single platform.
   developer: ''
-  author: Pydio
+  author: adrianocandrade
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/pydio.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/pydio.png
   title:
