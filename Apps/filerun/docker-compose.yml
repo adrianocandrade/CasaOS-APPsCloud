@@ -1,27 +1,29 @@
 name: filerun
 services:
     filerun:
-        image: filerun/filerun:8.1
+        image: alexphillips/filerun:latest
         network_mode: default
-        environment:
-          FR_DB_HOST: db
-          FR_DB_PORT: 3308
-          FR_DB_NAME: casaosfilerun
-          FR_DB_USER: casaosfilerun
-          FR_DB_PASS: casaosfilerun
-          APACHE_RUN_USER: www-data
-          APACHE_RUN_USER_ID: 33
-          APACHE_RUN_GROUP: www-data
-          APACHE_RUN_GROUP_ID: 33
+        cap_add:
+          - AUDIT_WRITE
+          - CHOWN
+          - DAC_OVERRIDE
+          - FOWNER
+          - FSETID
+          - KILL
+          - MKNOD
+          - NET_BIND_SERVICE
+          - NET_RAW
+          - SETFCAP
+          - SETGID
+          - SETPCAP
+          - SETUID
+          - SYS_CHROOT
         ports:
             - target: 80
               published: "3386"
               protocol: tcp
         restart: unless-stopped
-        depends_on:
-          - db
-        links:
-          - db:db
+        network_mode: bridge
         volumes:
             - type: bind
               source: /DATA/AppData/filerun/html
@@ -29,21 +31,6 @@ services:
             - type: bind
               source: /DATA/AppData/filerun/user-file
               target: /user-files
-    db:
-      image: mariadb:10.1
-      environment:
-        MYSQL_ROOT_PASSWORD: casaosfilerun
-        MYSQL_USER: casaosfilerun
-        MYSQL_PASSWORD: casaosfilerun
-        MYSQL_DATABASE: casaosfilerun
-      volumes:
-        - type: bind
-          source: /DATA/AppData/filerun/db
-          target: /var/lib/mysql
-      ports:
-            - target: 3306
-              published: "3308"
-              protocol: tcp
 x-casaos:
   architectures:
     - amd64
