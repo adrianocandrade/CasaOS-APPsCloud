@@ -18,16 +18,6 @@ services:
       - SETPCAP
       - SETUID
       - SYS_CHROOT
-    depends_on:
-      - db
-    links:
-      - db:db
-    environment:
-      FR_DB_HOST: 192.168.68.104
-      FR_DB_PORT: 33067
-      FR_DB_NAME: filerun
-      FR_DB_USER: filerun
-      FR_DB_PASS: fileruncasaos
     ports:
       - target: 80
         published: "3386"
@@ -43,22 +33,6 @@ services:
       - type: bind
         source: /DATA/AppData/filerun/user-file
         target: /user-files
-  db:
-    image: mysql:5.7
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: fileruncasaos
-      MYSQL_DATABASE: filerun
-      MYSQL_USER: filerun
-      MYSQL_PASSWORD: fileruncasaos
-    ports:
-      - target: 3306
-        published: '33067'
-        protocol: tcp
-    volumes:
-      - type: bind
-        source: /DATA/AppData/filerun/mysql
-        target: /var/lib/mysql
         
 x-casaos:
   architectures:

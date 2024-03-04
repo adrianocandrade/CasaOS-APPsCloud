@@ -16,22 +16,6 @@ services:
         target: /var/cells
     environment:
       CELLS_LOG_LEVEL: production
-  db:
-    image: mysql:5.7
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: pydiocasaos
-      MYSQL_DATABASE: pydio
-      MYSQL_USER: pydio
-      MYSQL_PASSWORD: pydiocasaos
-    ports:
-      - target: 3306
-        published: '33066'
-        protocol: tcp
-    volumes:
-      - type: bind
-        source: /DATA/AppData/pydio/mysql
-        target: /var/lib/mysql
 x-casaos:
   architectures:
     - amd64
