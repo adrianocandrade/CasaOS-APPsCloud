@@ -1,0 +1,52 @@
+name: cloudreve
+services:
+    cloudreve:
+        environment:
+            HOME: /root
+            PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+            PGID: "1000"
+            PS1: '$(whoami)@$(hostname):$(pwd)\$ '
+            PUID: "1000"
+            TERM: xterm
+            TZ: American/Sao_Paulo
+        image: xavierniu/cloudreve
+        network_mode: default
+        ports:
+            - target: 5212
+              published: "5212"
+              protocol: tcp
+        restart: unless-stopped
+        volumes:
+            - type: bind
+              source: /cloudreve/avatar
+              target: /mnt/Dados/AppData/cloudreve/avatar
+            - type: bind
+              source: /downloads
+              target: /mnt/Dados/AppData/cloudreve/avatar/downloads
+            - type: bind
+              source: /cloudreve/uploads
+              target: /mnt/Dados/AppData/cloudreve/uploads
+            - type: bind
+              source: /cloudreve/config
+              target: /mnt/Dados/AppData/cloudreve/config/
+            - type: bind
+              source: /cloudreve/db
+              target: /mnt/Dados/AppData/cloudreve/db
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Cloudreve can help you instantly create a network disk service that can be used for personal and public use and get a flexible file management experience with support for multiple storage policies, virtual file systems, and more.
+  tagline:
+    en_us: Cloudreve can help you instantly create a network disk service that can be used for personal and public use and get a flexible file management experience with support for multiple storage policies, virtual file systems, and more.
+  developer: ''
+  author: adrianocandrade
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/cloudreve.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/cloudreve.png
+  title:
+    en_us: Pydio Cells
+  category: Cloud
+  port_map: '80'
