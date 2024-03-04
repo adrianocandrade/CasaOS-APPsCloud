@@ -18,6 +18,13 @@ services:
               published: "5212"
               protocol: tcp
         restart: unless-stopped
+        command: >
+          bash -c "mkdir -vp cloudreve/{uploads,avatar}
+          && touch cloudreve/conf.ini
+          && touch cloudreve/cloudreve.db
+          && mkdir -p aria2/config
+          && mkdir -p data/aria2
+          && chmod -R 777 data/aria2"
         volumes:
             - type: bind
               source: /DATA/AppData/cloudreve/temp_data
