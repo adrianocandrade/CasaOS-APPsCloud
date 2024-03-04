@@ -40,13 +40,17 @@ x-casaos:
   main: app
   description:
     en_us: Cloudreve can help you instantly create a network disk service that can be used for personal and public use and get a flexible file management experience with support for multiple storage policies, virtual file systems, and more.
+    pt_br: Cloudreve pode ajudá-lo a criar instantaneamente um serviço de disco de rede que pode ser usado para uso pessoal e público e obter uma experiência flexível de gerenciamento de arquivos com suporte para múltiplas políticas de armazenamento, sistemas de arquivos virtuais e muito mais.
   tagline:
     en_us: Cloudreve can help you instantly create a network disk service that can be used for personal and public use and get a flexible file management experience with support for multiple storage policies, virtual file systems, and more.
+    pt_br: Cloudreve pode ajudá-lo a criar instantaneamente um serviço de disco de rede que pode ser usado para uso pessoal e público e obter uma experiência flexível de gerenciamento de arquivos com suporte para múltiplas políticas de armazenamento, sistemas de arquivos virtuais e muito mais.
   developer: ''
   author: adrianocandrade
-  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/cloudreve.png
-  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/cloudreve.png
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/cloudreve.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/cloudreve.png
+  project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
   title:
     en_us: Cloudreve
+    pt_br: Cloudreve
   category: Cloud
   port_map: '5212'

@@ -24,13 +24,17 @@ x-casaos:
   main: app
   description:
     en_us: Pydio Cells is a document sharing and collaboration platform that puts you in full control of your documents in a way Saas solutions can’t - combining fast performance, huge file transfer sizes, granular security, and advanced workflow automations in a single platform.
+    pt_br: Pydio Cells é uma plataforma de compartilhamento e colaboração de documentos que coloca você no controle total de seus documentos de uma forma que as soluções Saas não conseguem - combinando desempenho rápido, enormes tamanhos de transferência de arquivos, segurança granular e automações avançadas de fluxo de trabalho em uma única plataforma.
   tagline:
     en_us: Pydio Cells is a document sharing and collaboration platform that puts you in full control of your documents in a way Saas solutions can’t - combining fast performance, huge file transfer sizes, granular security, and advanced workflow automations in a single platform.
+    pt_br: Pydio Cells é uma plataforma de compartilhamento e colaboração de documentos que coloca você no controle total de seus documentos de uma forma que as soluções Saas não conseguem - combinando desempenho rápido, enormes tamanhos de transferência de arquivos, segurança granular e automações avançadas de fluxo de trabalho em uma única plataforma.
   developer: ''
   author: adrianocandrade
-  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/pydio.png
-  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/pydio.png
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/pydio.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/pydio.png
+  project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
   title:
     en_us: Pydio Cells
+    pt_br: Pydio Cells
   category: Cloud
   port_map: '3321'

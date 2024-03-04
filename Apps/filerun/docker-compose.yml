@@ -42,13 +42,17 @@ x-casaos:
   main: app
   description:
     en_us: FileRun - Just like you do with an FTP server, point FileRun to where you keep the files on your server, and you will get instant web access to them.
+    pt_br: FileRun - Assim como você faz com um servidor FTP, aponte o FileRun para onde você mantém os arquivos em seu servidor e você obterá acesso instantâneo a eles pela Web.
   tagline:
     en_us: FileRun - Just like you do with an FTP server, point FileRun to where you keep the files on your server, and you will get instant web access to them.
+    pt_br: FileRun - Assim como você faz com um servidor FTP, aponte o FileRun para onde você mantém os arquivos em seu servidor e você obterá acesso instantâneo a eles pela Web.
   developer: ''
   author: adrianocandrade
-  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/filerun.png
-  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/filerun.png
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filerun.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filerun.png
+  project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
   title:
     en_us: FileRun
+    pt_br: FileRun
   category: Cloud
   port_map: '3386'

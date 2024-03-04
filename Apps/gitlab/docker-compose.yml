@@ -36,13 +36,24 @@ x-casaos:
   main: app
   description:
     en_us: GitLab is the most comprehensive AI-powered DevSecOps Platform.
+    pt_br: GitLab é a plataforma DevSecOps mais abrangente com tecnologia de IA.
   tagline:
     en_us: GitLab is the most comprehensive AI-powered DevSecOps Platform.
+    pt_br: GitLab é a plataforma DevSecOps mais abrangente com tecnologia de IA.
   developer: ''
   author: adrianocandrade
-  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/gitlab.png
-  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/gitlab.png
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/gitlab.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/gitlab.png
+  project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  store_app_id: gitlab
   title:
     en_us: GitLab
+    pt_br: GitLab
+  tips:
+    before_install:
+      en_us: |
+        Attention: GitLab, even after being installed, may take more than 10 minutes to become available to check whether the service is properly available and use the portainer application.
+      pt_br: |
+        Atenção: O GitLab mesmo depois de instalado pode levar mais de 10 minutos para ficar disponivel para verificar se o serviço esta disponivel idela e utilizar a aplicação portainer.
   category: Developer
   port_map: '3080'
