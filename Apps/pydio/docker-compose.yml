@@ -1,0 +1,50 @@
+name: pydio
+services:
+  app:
+    image: pydio/cells:latest
+    restart: unless-stopped
+    ports:
+      - target: 8080
+        published: '3321'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: data:/var/cells/data
+        target: /mnt/Dados/AppData/pydio/cells/data
+      - type: bind
+        source: cellsdir:/var/cells
+        target: /mnt/Dados/AppData/pydio/cells
+    environment:
+      CELLS_LOG_LEVEL: production
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: casaos
+      MYSQL_DATABASE: casaos
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
+    ports:
+      - target: 3306
+        published: '33066'
+        protocol: tcp
+    volumes:
+      - /mnt/Dados/AppData/pydio/mysql:/var/lib/mysql
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Pydio Cells is a document sharing and collaboration platform that puts you in full control of your documents in a way Saas solutions can’t - combining fast performance, huge file transfer sizes, granular security, and advanced workflow automations in a single platform.
+  tagline:
+    en_us: Pydio Cells is a document sharing and collaboration platform that puts you in full control of your documents in a way Saas solutions can’t - combining fast performance, huge file transfer sizes, granular security, and advanced workflow automations in a single platform.
+  developer: ''
+  author: Pydio
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/pydio.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/pydio.png
+  title:
+    en_us: Pydio Cells
+  category: Cloud
+  port_map: '80'
