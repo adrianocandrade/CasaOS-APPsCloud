@@ -1,36 +1,35 @@
 name: filerun
 services:
-    filerun:
-        image: alexphillips/filerun:latest
-        network_mode: default
-        cap_add:
-          - AUDIT_WRITE
-          - CHOWN
-          - DAC_OVERRIDE
-          - FOWNER
-          - FSETID
-          - KILL
-          - MKNOD
-          - NET_BIND_SERVICE
-          - NET_RAW
-          - SETFCAP
-          - SETGID
-          - SETPCAP
-          - SETUID
-          - SYS_CHROOT
-        ports:
-            - target: 80
-              published: "3386"
-              protocol: tcp
-        restart: unless-stopped
-        network_mode: bridge
-        volumes:
-            - type: bind
-              source: /DATA/AppData/filerun/html
-              target: /var/www/html
-            - type: bind
-              source: /DATA/AppData/filerun/user-file
-              target: /user-files
+  filerun:
+    image: alexphillips/filerun:latest
+    network_mode: default
+    cap_add:
+      - AUDIT_WRITE
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - FSETID
+      - KILL
+      - MKNOD
+      - NET_BIND_SERVICE
+      - NET_RAW
+      - SETFCAP
+      - SETGID
+      - SETPCAP
+      - SETUID
+      - SYS_CHROOT
+    ports:
+      - target: 80
+        published: "3386"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/filerun/html
+        target: /var/www/html
+      - type: bind
+        source: /DATA/AppData/filerun/user-file
+        target: /user-files
 x-casaos:
   architectures:
     - amd64
