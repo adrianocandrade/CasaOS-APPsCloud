@@ -1,0 +1,48 @@
+name: pydio
+services:
+  app:
+    image: gitlab/gitlab-ce:latest
+    restart: unless-stopped
+    environment:
+      EDITOR: /bin/vi
+      GITLAB_ALLOW_SHA1_RSA: "false"
+      LANG: C.UTF-8
+      TERM: xterm
+    ports:
+      - target: 22
+        published: "3022"
+        protocol: tcp
+      - target: 443
+        published: "3443"
+        protocol: tcp
+      - target: 80
+        published: "3080"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/gitlab/config
+        target: /etc/gitlab
+      - type: bind
+        source: /DATA/AppData/gitlab/var/log
+        target: /var/log/gitlab
+      - type: bind
+        source: /DATA/AppData/gitlab/var/opt
+        target: /var/opt/gitlab
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: GitLab is the most comprehensive AI-powered DevSecOps Platform.
+  tagline:
+    en_us: GitLab is the most comprehensive AI-powered DevSecOps Platform.
+  developer: ''
+  author: adrianocandrade
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/gitlab.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/gitlab.png
+  title:
+    en_us: GitLab
+  category: Developer
+  port_map: '3080'
