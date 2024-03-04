@@ -1,5 +1,15 @@
 name: cloudreve
 services:
+    aria2:
+      container_name: aria2
+      image: p3terx/aria2-pro
+      restart: unless-stopped
+      environment:
+        RPC_SECRET: '0RIHkKpROrd2PRN4bgJs9aXbJ5mhW1Na'
+        RPC_PORT: 6800
+      volumes:
+        - ./aria2/config:/config
+        - temp_data:/data
     cloudreve:
         environment:
             HOME: /root
@@ -9,7 +19,9 @@ services:
             PUID: "1000"
             TERM: xterm
             TZ: American/Sao_Paulo
-        image: xavierniu/cloudreve
+        image: cloudreve/cloudreve:latest
+        depends_on:
+          - aria2
         network_mode: default
         ports:
             - target: 5212
@@ -18,20 +30,20 @@ services:
         restart: unless-stopped
         volumes:
             - type: bind
-              source: /DATA/AppData/cloudreve/avatar
-              target: /cloudreve/avatar
-            - type: bind
-              source: /DATA/AppData/cloudreve/downloads
-              target: /downloads
+              source: /DATA/AppData/cloudreve/temp_data
+              target: /temp_data
             - type: bind
               source: /DATA/AppData/cloudreve/uploads
               target: /cloudreve/uploads
             - type: bind
-              source: /DATA/AppData/cloudreve/config/
-              target: /cloudreve/config
+              source: /DATA/AppData/cloudreve/conf.ini
+              target: /cloudreve/conf.ini
             - type: bind
-              source: /DATA/AppData/cloudreve/db
-              target: /cloudreve/db
+              source: /DATA/AppData/cloudreve/cloudreve.db
+              target: /cloudreve/cloudreve.db
+            - type: bind
+              source: /DATA/AppData/cloudreve/avatar
+              target: /ccloudreve/avatar
 x-casaos:
   architectures:
     - amd64
