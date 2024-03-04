@@ -37,5 +37,11 @@ x-casaos:
   title:
     en_us: Pydio Cells
     pt_br: Pydio Cells
+  tips:
+    before_install:
+      en_us: |
+        Attention: Require MYSQL Database to complete installation.
+      pt_br: |
+        Atenção: Reque Banco de dados MYSQL para finalização da instalação. 
   category: Cloud
   port_map: '3321'

@@ -57,8 +57,8 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        Attention: GitLab, even after being installed, may take more than 10 minutes to become available to check whether the service is properly available and use the portainer application.
+        Attention: Cloudreve username and password are in the cloudreve installation logs, the easiest way to view it would be through the portainer application.
       pt_br: |
-        Atenção: O GitLab mesmo depois de instalado pode levar mais de 10 minutos para ficar disponivel para verificar se o serviço esta disponivel idela e utilizar a aplicação portainer.
+        Atenção: Usuário e senha do cloudreve esta nos logs de instalação do mesmo, forma mais facil de visualizar seria pelo aplicação portainer.
   category: Developer
   port_map: '3080'
