@@ -1,4 +1,4 @@
-name: pydio
+name: gitlab
 services:
   app:
     image: gitlab/gitlab-ce:latest
