@@ -9,11 +9,11 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: data:/var/cells/data
-        target: /mnt/Dados/AppData/pydio/cells/data
+        source: /DATA/AppData/pydio/cells/data
+        target: /data:/var/cells/data
       - type: bind
-        source: cellsdir:/var/cells
-        target: /mnt/Dados/AppData/pydio/cells
+        source: /DATA/AppData/pydio/cells
+        target: cellsdir:/var/cells
     environment:
       CELLS_LOG_LEVEL: production
   db:
@@ -47,4 +47,4 @@ x-casaos:
   title:
     en_us: Pydio Cells
   category: Cloud
-  port_map: '80'
+  port_map: '3321'

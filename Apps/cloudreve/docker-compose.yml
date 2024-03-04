@@ -18,20 +18,20 @@ services:
         restart: unless-stopped
         volumes:
             - type: bind
-              source: /cloudreve/avatar
-              target: /mnt/Dados/AppData/cloudreve/avatar
+              source: /DATA/AppData/cloudreve/avatar
+              target: /cloudreve/avatar
             - type: bind
-              source: /downloads
-              target: /mnt/Dados/AppData/cloudreve/avatar/downloads
+              source: /DATA/AppData/cloudreve/downloads
+              target: /downloads
             - type: bind
-              source: /cloudreve/uploads
-              target: /mnt/Dados/AppData/cloudreve/uploads
+              source: /DATA/AppData/cloudreve/uploads
+              target: /cloudreve/uploads
             - type: bind
-              source: /cloudreve/config
-              target: /mnt/Dados/AppData/cloudreve/config/
+              source: /DATA/AppData/cloudreve/config/
+              target: /cloudreve/config
             - type: bind
-              source: /cloudreve/db
-              target: /mnt/Dados/AppData/cloudreve/db
+              source: /DATA/AppData/cloudreve/db
+              target: /cloudreve/db
 x-casaos:
   architectures:
     - amd64
@@ -49,4 +49,4 @@ x-casaos:
   title:
     en_us: Cloudreve
   category: Cloud
-  port_map: '80'
+  port_map: '5212'
