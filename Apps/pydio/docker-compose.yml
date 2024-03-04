@@ -10,7 +10,7 @@ services:
     volumes:
       - type: bind
         source: /DATA/AppData/pydio/cells/data
-        target: /data:/var/cells/data
+        target: data:/var/cells/data
       - type: bind
         source: /DATA/AppData/pydio/cells
         target: cellsdir:/var/cells
@@ -29,7 +29,9 @@ services:
         published: '33066'
         protocol: tcp
     volumes:
-      - /mnt/Dados/AppData/pydio/mysql:/var/lib/mysql
+      - type: bind
+        source: /DATA/AppData/pydio/mysql
+        target: /var/lib/mysql
 x-casaos:
   architectures:
     - amd64
