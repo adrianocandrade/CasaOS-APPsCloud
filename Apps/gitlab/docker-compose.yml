@@ -45,6 +45,11 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/gitlab.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/gitlab.png
   project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  screenshot_link:
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/gitlab/screenshot-1.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/gitlab/screenshot-2.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/gitlab/screenshot-3.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/gitlab/screenshot-4.png
   store_app_id: gitlab
   title:
     en_us: GitLab
