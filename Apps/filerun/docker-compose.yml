@@ -25,6 +25,9 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
+        source: /DATA/AppData/filerun/config
+        target: /config
+      - type: bind
         source: /DATA/AppData/filerun/html
         target: /var/www/html
       - type: bind
