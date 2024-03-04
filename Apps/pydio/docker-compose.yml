@@ -10,10 +10,10 @@ services:
     volumes:
       - type: bind
         source: /DATA/AppData/pydio/cells/data
-        target: data:/var/cells/data
+        target: /var/cells/data
       - type: bind
         source: /DATA/AppData/pydio/cells
-        target: cellsdir:/var/cells
+        target: /var/cells
     environment:
       CELLS_LOG_LEVEL: production
   db:
