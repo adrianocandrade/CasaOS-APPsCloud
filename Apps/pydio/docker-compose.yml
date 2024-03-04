@@ -33,6 +33,7 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/pydio.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/pydio.png
   project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  store_app_id: pydio
   title:
     en_us: Pydio Cells
     pt_br: Pydio Cells

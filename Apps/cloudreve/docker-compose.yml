@@ -49,6 +49,7 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/cloudreve.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/cloudreve.png
   project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  store_app_id: cloudreve
   title:
     en_us: Cloudreve
     pt_br: Cloudreve

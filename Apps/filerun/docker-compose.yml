@@ -51,6 +51,7 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filerun.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filerun.png
   project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  store_app_id: filerun
   title:
     en_us: FileRun
     pt_br: FileRun
