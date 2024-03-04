@@ -47,6 +47,6 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/cloudreve.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/icons/cloudreve.png
   title:
-    en_us: Pydio Cells
+    en_us: Cloudreve
   category: Cloud
   port_map: '80'
