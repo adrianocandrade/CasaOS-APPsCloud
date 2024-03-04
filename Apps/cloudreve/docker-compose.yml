@@ -2,29 +2,17 @@ name: cloudreve
 services:
     cloudreve:
         environment:
-            HOME: /root
-            PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
             PGID: "1000"
-            PS1: '$(whoami)@$(hostname):$(pwd)\$ '
             PUID: "1000"
             TERM: xterm
-            TZ: American/Sao_Paulo
-        image: cloudreve/cloudreve:latest
-        depends_on:
-          - aria2
+            TZ: America/Sao_Paulo
+        image: xavierniu/cloudreve:latest
         network_mode: default
         ports:
             - target: 5212
               published: "5212"
               protocol: tcp
         restart: unless-stopped
-        command: >
-          bash -c "mkdir -vp cloudreve/{uploads,avatar}
-          && touch cloudreve/conf.ini
-          && touch cloudreve/cloudreve.db
-          && mkdir -p aria2/config
-          && mkdir -p data/aria2
-          && chmod -R 777 data/aria2"
         volumes:
             - type: bind
               source: /DATA/AppData/cloudreve/temp_data
@@ -33,28 +21,14 @@ services:
               source: /DATA/AppData/cloudreve/uploads
               target: /cloudreve/uploads
             - type: bind
-              source: /DATA/AppData/cloudreve/conf.ini
-              target: /cloudreve/conf.ini
+              source: /DATA/AppData/cloudreve/config
+              target: /cloudreve/config
             - type: bind
-              source: /DATA/AppData/cloudreve/cloudreve.db
-              target: /cloudreve/cloudreve.db
+              source: /DATA/AppData/cloudreve/cloudreve/db
+              target: /cloudreve/cloudreve/db
             - type: bind
               source: /DATA/AppData/cloudreve/avatar
               target: /ccloudreve/avatar
-    aria2:
-      container_name: aria2
-      image: p3terx/aria2-pro
-      restart: unless-stopped
-      environment:
-        RPC_SECRET: '0RIHkKpROrd2PRN4bgJs9aXbJ5mhW1Na'
-        RPC_PORT: 6800
-      volumes:
-        - type: bind
-          source: /DATA/AppData/cloudreve/aria2/config
-          target: /aria2/config
-        - type: bind
-          source: /DATA/AppData/cloudreve/aria2/temp_data
-          target: /data
 x-casaos:
   architectures:
     - amd64
