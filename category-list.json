@@ -1,7 +1,7 @@
 [
   {
     "name": "APPSCloud",
-    "font": "snow",
-    "description": ""
+    "font": "apps-cloud",
+    "description": "The aim is to make cloud apps and file managers available in a simplified way for CasaOS"
   }
 ]
