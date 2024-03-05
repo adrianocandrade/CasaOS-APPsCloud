@@ -1,5 +1,38 @@
 name: seafile
 services:
+  db:
+    container_name: seafile-mysql
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+      - MYSQL_LOG_CONSOLE=true
+      - MYSQL_ROOT_PASSWORD=casaos
+    hostname: seafile-mysql
+    image: mariadb:10.5
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/seafile/db
+        target: /var/lib/mysql
+    networks:
+      - seafile-net
+  memcached:
+    container_name: seafile-memcached
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    entrypoint:
+      - memcached
+      - -m
+      - "256"
+    hostname: seafile-memcached
+    image: memcached:1.5.6
+    restart: unless-stopped
+    networks:
+      - seafile-net
   seafile:
     container_name: seafile
     depends_on:
@@ -12,9 +45,9 @@ services:
     deploy:
       resources:
         limits:
-          memory: 1024M
+          memory: 7717M
     environment:
-      - DB_HOST=db
+      - DB_HOST=localhost
       - DB_ROOT_PASSWD=casaos
       - SEAFILE_ADMIN_EMAIL=admin@admin.com
       - SEAFILE_ADMIN_PASSWORD=casaos
@@ -30,42 +63,13 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /opt/seafile-data
+        source: /DATA/AppData/seafile/data
         target: /shared
-    network_mode: bridge
-  db:
-    container_name: seafile-mysql
-    deploy:
-      resources:
-        limits:
-          memory: 512M
-    environment:
-      - MARIADB_AUTO_UPGRADE=1
-      - MYSQL_LOG_CONSOLE=true
-      - MYSQL_ROOT_PASSWORD=casaos
-    hostname: seafile-mysql
-    image: mariadb:10.11
-    restart: unless-stopped
-    volumes:
-      - type: bind
-        source: /DATA/AppData/seafile/db
-        target: /var/lib/mysql
-    network_mode: bridge
-  memcached:
-    container_name: seafile-memcached
-    deploy:
-      resources:
-        limits:
-          memory: 512M
-    entrypoint:
-      - memcached
-      - -m
-      - "256"
-    hostname: seafile-memcached
-    image: memcached:1.6.18
-    restart: unless-stopped
-    network_mode: bridge
-
+    networks:
+      - seafile-net
+networks:
+  seafile-net:
+    name: gifted_lajos_seafile-net
 x-casaos:
   architectures:
     - amd64
@@ -130,8 +134,30 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        Attention: Require MYSQL Database to complete installation.
+        🔧 Settings
+        Default email: `admin@admin.com`
+        Default password: `casaos`
+
+        ⚠️ Warning!
+
+        You need to change at least the mandatory `WG_HOST` parameter for this application to work correctly.
+        Its value must be a domain (or IP address) that points to this server (accessible via WAN).
+
+        The same applies to the `WG_PORT` parameter. Change it to the port accessible outside your LAN if it is different from the standard 8081.
+
+        Default password for the bank `casaos` ideal would be to change its password to a secure password.
       pt_br: |
-        Atenção: Requer Banco de dados MYSQL para finalização da instalação. 
+        🔧 Settings
+        Default email: `admin@admin.com`
+        Default password: `casaos`
+
+        ⚠️ Warning!
+
+        You need to change at least the mandatory `WG_HOST` parameter for this application to work correctly.
+        Its value must be a domain (or IP address) that points to this server (accessible via WAN).
+
+        The same applies to the `WG_PORT` parameter. Change it to the port accessible outside your LAN if it is different from the standard 8081.
+
+        Default password for the bank `casaos` ideal would be to change its password to a secure password.
   category: Cloud
   port_map: '8081'
