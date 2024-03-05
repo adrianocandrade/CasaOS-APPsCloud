@@ -23,8 +23,18 @@ x-casaos:
     - arm64
   main: app
   description:
-    en_us: Pydio Cells is a document sharing and collaboration platform that puts you in full control of your documents in a way Saas solutions can’t - combining fast performance, huge file transfer sizes, granular security, and advanced workflow automations in a single platform.
-    pt_br: Pydio Cells é uma plataforma de compartilhamento e colaboração de documentos que coloca você no controle total de seus documentos de uma forma que as soluções Saas não conseguem - combinando desempenho rápido, enormes tamanhos de transferência de arquivos, segurança granular e automações avançadas de fluxo de trabalho em uma única plataforma.
+    en_us: |
+      We are pioneers in the file sharing space. AjaXplorer, our first platform, was an open-source, web-based file sharing platform developed before Dropbox even existed. Pydio understood early on that many companies needed to share documents while maintaining full control over their data.
+
+      In many industries, advanced security requirements, regulations or compliance issues mean that SaaS file sharing is not a viable option.
+
+      Pydio bridges the gap between rapidly evolving open source software and enterprise-ready solutions, providing security-conscious organizations with a platform they can count on to securely share documents and collaborate.
+    pt_br: |
+      Somos pioneiros no espaço de compartilhamento de arquivos. AjaXplorer, nossa primeira plataforma, foi uma plataforma de compartilhamento de arquivos de código aberto baseada na web desenvolvida antes mesmo do Dropbox existir. Pydio entendeu desde cedo que muitas empresas precisavam compartilhar documentos, mantendo controle total sobre seus dados.
+
+      Em muitos setores, requisitos avançados de segurança, regulamentos ou problemas de conformidade significam que o compartilhamento de arquivos SaaS não é uma opção viável.
+
+      A Pydio preenche a lacuna entre software de código aberto em rápida evolução e soluções prontas para empresas, fornecendo às organizações preocupadas com a segurança uma plataforma com a qual podem contar para compartilhar documentos e colaborar com segurança.
   tagline:
     en_us: Pydio Cells is a document sharing and collaboration platform that puts you in full control of your documents in a way Saas solutions can’t - combining fast performance, huge file transfer sizes, granular security, and advanced workflow automations in a single platform.
     pt_br: Pydio Cells é uma plataforma de compartilhamento e colaboração de documentos que coloca você no controle total de seus documentos de uma forma que as soluções Saas não conseguem - combinando desempenho rápido, enormes tamanhos de transferência de arquivos, segurança granular e automações avançadas de fluxo de trabalho em uma única plataforma.
@@ -33,6 +43,12 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/pydio.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/pydio.png
   project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  screenshot_link:
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/pydio/screenshot-1.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/pydio/screenshot-2.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/pydio/screenshot-3.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/pydio/screenshot-4.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/pydio/screenshot-5.png
   store_app_id: pydio
   title:
     en_us: Pydio Cells
