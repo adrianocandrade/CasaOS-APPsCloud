@@ -1,0 +1,136 @@
+name: seafile
+services:
+  db:
+    container_name: seafile-mysql
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+      - MARIADB_AUTO_UPGRADE=1
+      - MYSQL_LOG_CONSOLE=true
+      - MYSQL_ROOT_PASSWORD=casaos
+    hostname: seafile-mysql
+    image: mariadb:10.11
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/seafile/db
+        target: /var/lib/mysql
+    network_mode: bridge
+  memcached:
+    container_name: seafile-memcached
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    entrypoint:
+      - memcached
+      - -m
+      - "256"
+    hostname: seafile-memcached
+    image: memcached:1.6.18
+    restart: unless-stopped
+    network_mode: bridge
+  seafile:
+    container_name: seafile
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+      memcached:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+    environment:
+      - DB_HOST=db
+      - DB_ROOT_PASSWD=casaos
+      - SEAFILE_ADMIN_EMAIL=admin@admin.com
+      - SEAFILE_ADMIN_PASSWORD=casaos
+      - SEAFILE_SERVER_HOSTNAME=localhost
+      - SEAFILE_SERVER_LETSENCRYPT=false
+      - TIME_ZONE=Etc/UTC
+    hostname: seafile
+    image: seafileltd/seafile-mc:latest
+    ports:
+      - target: 80
+        published: "8081"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /opt/seafile-data
+        target: /shared
+    network_mode: bridge
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: seafile
+  description:
+    en_us: |
+      Open Source File Sync&Share and Document Collaboration Platform
+      Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.
+
+      ** Comprehensive Cloud Storage Features **
+      Seafile offers a comprehensive set of cloud storage features, allowing users to store, manage, and share files within the Seafile platform. It supports various file types and provides clients for multiple platforms, including Windows, Mac, Linux, iOS, and Android. This enables users to effortlessly access and manage their files on any device, providing a unified and seamless user experience.
+
+      ** Powerful Sharing Collaboration **
+      Seafile's collaboration features go beyond simple file sharing. It supports online document editing and file locking, as well as providing permission management, version control and event notification, making teamwork more fluid, controlled and efficient.
+
+      ** Stable and Reliable File Sync **
+      Seafile is renowned for its reliable file synchronization and data integrity checks, earning the trust and validation of millions of users. Whether you're an individual or a team, you can confidently use Seafile for file sync without worrying about data loss or corruption.
+
+      ** High Performance **
+      Seafile boasts rapid file synchronization speeds, allowing users to sync tens of thousands of files within a minute. Simultaneously, the server exhibits low hardware resource consumption, ensuring efficient system operation and responsiveness. This makes Seafile suitable for enterprises of various scales.
+
+      ** Integrated Collaborative Document Editor **
+      Seafile features the built-in collaborative document editor, SeaDoc, enabling users to collaboratively create, manage, and publish high-quality documents directly within the Seafile platform. Team collaboration becomes more convenient and efficient, allowing multiple users to edit documents simultaneously with real-time synchronization updates.
+    pt_br: |
+      Plataforma de sincronização e compartilhamento de arquivos de código aberto e colaboração de documentos
+      Seafile é uma plataforma de sincronização e compartilhamento de arquivos de código aberto, com foco em confiabilidade e desempenho. O documento colaborativo integrado do Seafile, SeaDoc, facilita a escrita e publicação colaborativa de documentos.
+
+      ** Recursos abrangentes de armazenamento em nuvem **
+      Seafile oferece um conjunto abrangente de recursos de armazenamento em nuvem, permitindo aos usuários armazenar, gerenciar e compartilhar arquivos na plataforma Seafile. Ele oferece suporte a vários tipos de arquivos e fornece clientes para várias plataformas, incluindo Windows, Mac, Linux, iOS e Android. Isso permite que os usuários acessem e gerenciem facilmente seus arquivos em qualquer dispositivo, proporcionando uma experiência de usuário unificada e contínua.
+
+      ** Colaboração de compartilhamento poderosa **
+      Os recursos de colaboração do Seafile vão além do simples compartilhamento de arquivos. Suporta edição de documentos online e bloqueio de arquivos, além de fornecer gerenciamento de permissões, controle de versões e notificação de eventos, tornando o trabalho em equipe mais fluido, controlado e eficiente.
+
+      ** Sincronização de arquivos estável e confiável **
+      Seafile é conhecido por sua sincronização confiável de arquivos e verificações de integridade de dados, conquistando a confiança e validação de milhões de usuários. Quer você seja um indivíduo ou uma equipe, você pode usar o Seafile com segurança para sincronização de arquivos, sem se preocupar com perda ou corrupção de dados.
+
+      ** Alta performance **
+      Seafile possui velocidades rápidas de sincronização de arquivos, permitindo aos usuários sincronizar dezenas de milhares de arquivos em um minuto. Simultaneamente, o servidor apresenta baixo consumo de recursos de hardware, garantindo operação e capacidade de resposta eficientes do sistema. Isso torna o Seafile adequado para empresas de vários portes.
+
+      ** Editor de documentos colaborativos integrados **
+      Seafile apresenta o editor de documentos colaborativos integrado, SeaDoc, permitindo aos usuários criar, gerenciar e publicar colaborativamente documentos de alta qualidade diretamente na plataforma Seafile. A colaboração em equipe torna-se mais conveniente e eficiente, permitindo que vários usuários editem documentos simultaneamente com atualizações de sincronização em tempo real.
+  tagline:
+    en_us: Seafile is an open source file sync and share platform, focusing on reliability and performance. Seafile's built-in collaborative document SeaDoc, make it easy for collaborative writing and publishing documents.
+    pt_br: Seafile é uma plataforma de sincronização e compartilhamento de arquivos de código aberto, com foco em confiabilidade e desempenho. O documento colaborativo integrado do Seafile, SeaDoc, facilita a escrita e publicação colaborativa de documentos.
+  developer: 'Seafile Ltd.'
+  author: adrianocandrade
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/seafile.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/seafile.png
+  project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  screenshot_link:
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/seafile/screenshot-1.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/seafile/screenshot-2.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/seafile/screenshot-3.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/seafile/screenshot-4.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/seafile/screenshot-5.png
+  store_app_id: seafile
+  title:
+    en_us: Seafile
+    pt_br: Seafile
+  tips:
+    before_install:
+      en_us: |
+        Attention: Require MYSQL Database to complete installation.
+      pt_br: |
+        Atenção: Requer Banco de dados MYSQL para finalização da instalação. 
+  category: Cloud
+  port_map: '8081'
