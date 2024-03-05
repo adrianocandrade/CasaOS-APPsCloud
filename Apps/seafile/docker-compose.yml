@@ -1,6 +1,6 @@
 name: seafile
 services:
-    seafile:
+  seafile:
     container_name: seafile
     depends_on:
       db:
@@ -65,6 +65,7 @@ services:
     image: memcached:1.6.18
     restart: unless-stopped
     network_mode: bridge
+
 x-casaos:
   architectures:
     - amd64
