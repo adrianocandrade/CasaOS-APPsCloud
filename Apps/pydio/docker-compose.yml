@@ -60,4 +60,5 @@ x-casaos:
       pt_br: |
         Atenção: Requer Banco de dados MYSQL para finalização da instalação. 
   category: Cloud
+  scheme: https
   port_map: '3321'

@@ -1,43 +1,43 @@
 name: gogs
 services:
   gogs:
+    depends_on:
+      postgres:
+        condition: service_started
+        required: true
+    environment:
+      - RUN_CROND=true
     image: gogs/gogs:latest
-    restart: unless-stopped
+    links:
+      - postgres
     ports:
       - target: 22
-        published: '10022'
+        published: "10022"
         protocol: tcp
       - target: 3000
-        published: '3022'
+        published: "3000"
         protocol: tcp
+    restart: always
     volumes:
       - type: bind
         source: /DATA/AppData/gogs/data
         target: /data
-    links:
-      - postgres
-    environment:
-      RUN_CROND: true
-    depends_on:
-      - postgres
-    networks:
-      - gogs
+      - type: bind
+        source: /DATA/AppData/gogs/backup
+        target: /backup
+    network_mode: bridge
   postgres:
+    environment:
+      - POSTGRES_DB=gogs
+      - POSTGRES_PASSWORD=casaos
+      - POSTGRES_USER=gogs
     image: postgres:9.5
     restart: always
-    environment:
-      - POSTGRES_USER: ${POSTGRES_USER}
-      - POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      - POSTGRES_DB: gogs
     volumes:
       - type: bind
         source: /DATA/AppData/gogs/postgresql/data
         target: /var/lib/postgresql/data
-    networks:
-      - gogs
-networks:
-  gogs:
-    driver: bridge
+    network_mode: bridge
 x-casaos:
   architectures:
     - amd64
