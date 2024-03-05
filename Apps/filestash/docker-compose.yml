@@ -1,0 +1,102 @@
+name: filestash
+services:
+  app:
+    image: machines/filestash:latest
+    restart: always
+    ports:
+      - target: 8334
+        published: '8334'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/filestash/app/data/state/
+        target: /app/data/state/
+    environment:
+      - APPLICATION_URL=
+      - GDRIVE_CLIENT_ID=<gdrive_client>
+      - GDRIVE_CLIENT_SECRET=<gdrive_secret>
+      - DROPBOX_CLIENT_ID=<dropbox_key>
+      - ONLYOFFICE_URL=http://onlyoffice
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: |
+      A Dropbox-like file manager that connect to your existing storage: FTP, SFTP, WebDAV, Git, S3, Minio, Dropbox, Google Drive.
+      
+      Features:
+        Manage your files from a browser
+        Flexible Share mechanism
+        Super fast
+        Photo management
+        Video player
+        Video transcoding (mov, mkv, avi, mpeg, and more)
+        Image viewer
+        Image transcoding (raw images from Nikon, Canon, and more)
+        Photo management
+        Audio player
+        Full Text Search
+        Shared links are full fledge network drive
+        Office documents (docx, xlsx and more)
+        User friendly
+        Mobile friendly
+        Customisable
+        Upload files and folders
+        Multiple cloud providers and protocols, easily extensible
+        Nyan cat loader
+        Quick access: frequently access folders are pin to the homepage
+        Emacs, VIM or Sublime keybindings ;)
+    pt_br: |
+      Um gerenciador de arquivos semelhante ao Dropbox que se conecta ao seu armazenamento existente: FTP, SFTP, WebDAV, Git, S3, Minio, Dropbox, Google Drive.
+      
+       Características:
+         Gerencie seus arquivos a partir de um navegador
+         Mecanismo de compartilhamento flexível
+         Super rápido
+         Gerenciamento de fotos
+         Reprodutor de vídeo
+         Transcodificação de vídeo (mov, mkv, avi, mpeg e mais)
+         Visualizador de imagens
+         Transcodificação de imagens (imagens raw da Nikon, Canon e mais)
+         Gerenciamento de fotos
+         Tocador de Áudio
+         Pesquisa de texto completo
+         Links compartilhados são unidades de rede completas
+         Documentos do Office (docx, xlsx e mais)
+         Amigo do usuário
+         Compatível com dispositivos móveis
+         Customizável
+         Carregar arquivos e pastas
+         Vários provedores e protocolos de nuvem, facilmente extensíveis
+         Carregador de gato Nyan
+         Acesso rápido: pastas de acesso frequente são fixadas na página inicial
+         Atalhos de teclado Emacs, VIM ou Sublime;)
+  tagline:
+    en_us: Filestash - Universal File Manage Effortlessly browse, organize, and share files across all your storage solutions via one intuitive interface. Filestash makes it possible, no matter the protocol.
+    pt_br: Filestash - Gerenciamento universal de arquivos Navegue, organize e compartilhe arquivos sem esforço em todas as suas soluções de armazenamento por meio de uma interface intuitiva. O Filestash torna isso possível, independentemente do protocolo.
+  developer: ''
+  author: adrianocandrade
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filestash.png
+  thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filestash.png
+  project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  screenshot_link:
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filestash/screenshot-0.gif
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filestash/screenshot-1.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filestash/screenshot-2.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filestash/screenshot-3.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filestash/screenshot-4.png
+  store_app_id: filestash
+  title:
+    en_us: Filestash
+    pt_br: Filestash
+  tips:
+    before_install:
+      en_us: |
+        Attention: Require MYSQL Database to complete installation.
+      pt_br: |
+        Atenção: Requer Banco de dados MYSQL para finalização da instalação. 
+  category: Cloud
+  port_map: '3321'
