@@ -14,14 +14,10 @@ services:
       - type: bind
         source: /DATA/AppData/gogs/data
         target: /data
-    links:
-      - postgres
     environment:
       RUN_CROND: true
     depends_on:
       - postgres
-    networks:
-      - gogs
   postgres:
     image: postgres:9.5
     restart: always
@@ -35,9 +31,6 @@ services:
         target: /var/lib/postgresql/data
     networks:
       - gogs
-networks:
-  gogs:
-    driver: bridge
 x-casaos:
   architectures:
     - amd64
