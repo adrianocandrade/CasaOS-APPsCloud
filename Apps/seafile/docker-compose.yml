@@ -69,7 +69,7 @@ services:
       - seafile-net
 networks:
   seafile-net:
-    name: gifted_lajos_seafile-net
+    name: seafile_seafile-net
 x-casaos:
   architectures:
     - amd64
@@ -163,4 +163,5 @@ x-casaos:
 
         Senha padrão do banco `casaos` ideal seria altera a senha do mesmo para uma senha segura. 
   category: Cloud
+  scheme: http
   port_map: '8081'
