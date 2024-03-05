@@ -35,8 +35,26 @@ x-casaos:
     - arm64
   main: app
   description:
-    en_us: GitLab is the most comprehensive AI-powered DevSecOps Platform.
-    pt_br: GitLab é a plataforma DevSecOps mais abrangente com tecnologia de IA.
+    en_us: |
+      GitLab is a cloud-based project management platform that allows software developers to develop and manage codes collaboratively. The platform can be deployed either on-premise or in the cloud.
+      
+      GitLab helps developers manage the complete code lifecycle, from the inception of an idea to the deployment of code on production. Primary features of GitLab are Git repository management, code review, issue tracking, activity feeds and audit logs. The software is offered in four different editions: Community Edition, Enterprise Edition, GitLab.com and GitLab.io.
+      
+      Users can upload their codes in the repository. GitLab also provides a repository mirroring feature that allows users to access a repository located on a different server with the help of the GitLab interface.
+      
+      The code review feature allows users to evaluate code line-by-line and provide comments. The software additionally provides continuous integration (CI) and continuous delivery (CD) to test, build and deploy codes.
+      
+      The Enterprise Edition of the software offers automated testing, Git hooks, audit trails and administrator features.
+    pt_br: |
+      GitLab é uma plataforma de gerenciamento de projetos baseada em nuvem que permite aos desenvolvedores de software desenvolver e gerenciar códigos de forma colaborativa. A plataforma pode ser implantada localmente ou na nuvem.
+      
+       O GitLab ajuda os desenvolvedores a gerenciar o ciclo de vida completo do código, desde o início de uma ideia até a implantação do código na produção. Os principais recursos do GitLab são gerenciamento de repositório Git, revisão de código, rastreamento de problemas, feeds de atividades e logs de auditoria. O software é oferecido em quatro edições diferentes: Community Edition, Enterprise Edition, GitLab.com e GitLab.io.
+      
+       Os usuários podem fazer upload de seus códigos no repositório. O GitLab também fornece um recurso de espelhamento de repositório que permite aos usuários acessar um repositório localizado em um servidor diferente com a ajuda da interface do GitLab.
+      
+       O recurso de revisão de código permite que os usuários avaliem o código linha por linha e forneçam comentários. O software também fornece integração contínua (CI) e entrega contínua (CD) para testar, construir e implantar códigos.
+      
+       A Enterprise Edition do software oferece testes automatizados, ganchos Git, trilhas de auditoria e recursos de administrador.
   tagline:
     en_us: GitLab is the most comprehensive AI-powered DevSecOps Platform.
     pt_br: GitLab é a plataforma DevSecOps mais abrangente com tecnologia de IA.
