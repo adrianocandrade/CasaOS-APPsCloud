@@ -41,7 +41,7 @@ x-casaos:
     en_us: |
       The Gogs project aims to build a simple, stable and extensible self-hosted Git service that can be set up in the most painless way. With Go, this can be done with an independent binary distribution across all platforms that Go supports, including Linux, macOS, Windows and ARM-based systems.
 
-      💌 Features
+      Features
         User dashboard, user profile and activity timeline.
         Access repositories via SSH, HTTP and HTTPS protocols.
         User, organization and repository management.
@@ -58,7 +58,7 @@ x-casaos:
     pt_br: |
       O projeto Gogs visa construir um serviço Git auto-hospedado simples, estável e extensível que pode ser configurado da maneira mais fácil. Com Go, isso pode ser feito com uma distribuição binária independente em todas as plataformas suportadas por Go, incluindo Linux, macOS, Windows e sistemas baseados em ARM.
 
-      💌 Recursos
+      Recursos
         Painel do usuário, perfil do usuário e cronograma de atividades.
         Acesse repositórios via protocolos SSH, HTTP e HTTPS.
         Gerenciamento de usuários, organização e repositório.
