@@ -102,4 +102,4 @@ x-casaos:
     en_us: Gogs
     pt_br: Gogs
   category: Developer
-  port_map: '3022'
+  port_map: '3000'
