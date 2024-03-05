@@ -39,8 +39,8 @@ x-casaos:
     - arm64
   main: app
   description:
-    en_us: Cloudreve can help you instantly create a network disk service that can be used for personal and public use and get a flexible file management experience with support for multiple storage policies, virtual file systems, and more.
-    pt_br: Cloudreve pode ajudá-lo a criar instantaneamente um serviço de disco de rede que pode ser usado para uso pessoal e público e obter uma experiência flexível de gerenciamento de arquivos com suporte para múltiplas políticas de armazenamento, sistemas de arquivos virtuais e muito mais.
+    en_us: Cloudreve is a public cloud file system that supports multiple cloud storage providers, including local storage, remote hosts, Qiniu, Alibaba Cloud OSS, Tencent Cloud COS, UpYun, OneDrive, and S3-compatible protocols as storage endpoints. It can also be integrated with Aria2 for offline downloads, supports multiple users, drag-and-drop uploads/management, online preview/editing, WebDAV, and more. It is typically used for personal image hosting or web-based file management.
+    pt_br: Cloudreve é um sistema de arquivos em nuvem pública que oferece suporte a vários provedores de armazenamento em nuvem, incluindo armazenamento local, hosts remotos, Qiniu, Alibaba Cloud OSS, Tencent Cloud COS, UpYun, OneDrive e protocolos compatíveis com S3 como terminais de armazenamento. Ele também pode ser integrado ao Aria2 para downloads offline, suporta vários usuários, uploads/gerenciamento de arrastar e soltar, visualização/edição online, WebDAV e muito mais. Normalmente é usado para hospedagem de imagens pessoais ou gerenciamento de arquivos baseado na web.
   tagline:
     en_us: Cloudreve can help you instantly create a network disk service that can be used for personal and public use and get a flexible file management experience with support for multiple storage policies, virtual file systems, and more.
     pt_br: Cloudreve pode ajudá-lo a criar instantaneamente um serviço de disco de rede que pode ser usado para uso pessoal e público e obter uma experiência flexível de gerenciamento de arquivos com suporte para múltiplas políticas de armazenamento, sistemas de arquivos virtuais e muito mais.
@@ -49,6 +49,11 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/cloudreve.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/cloudreve.png
   project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  screenshot_link:
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/cloudreve/screenshot-1.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/cloudreve/screenshot-2.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/cloudreve/screenshot-3.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/cloudreve/screenshot-4.png
   store_app_id: cloudreve
   title:
     en_us: Cloudreve
