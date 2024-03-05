@@ -137,27 +137,30 @@ x-casaos:
         🔧 Settings
         Default email: `admin@admin.com`
         Default password: `casaos`
+        Default port: `8081`
 
         ⚠️ Warning!
 
-        You need to change at least the mandatory `WG_HOST` parameter for this application to work correctly.
-        Its value must be a domain (or IP address) that points to this server (accessible via WAN).
-
-        The same applies to the `WG_PORT` parameter. Change it to the port accessible outside your LAN if it is different from the standard 8081.
-
-        Default password for the bank `casaos` ideal would be to change its password to a secure password.
-      pt_br: |
         🔧 Settings
         Default email: `admin@admin.com`
         Default password: `casaos`
 
         ⚠️ Warning!
 
-        You need to change at least the mandatory `WG_HOST` parameter for this application to work correctly.
+        You need to change at least the mandatory parameter `SEAFILE_SERVER_HOSTNAME` for this application to work correctly.
         Its value must be a domain (or IP address) that points to this server (accessible via WAN).
 
-        The same applies to the `WG_PORT` parameter. Change it to the port accessible outside your LAN if it is different from the standard 8081.
-
         Default password for the bank `casaos` ideal would be to change its password to a secure password.
+      pt_br: |
+        🔧 Configurações
+        E-mail padrão: `admin@admin.com`
+        Senha padrão: `casaos`
+
+        ⚠️ Aviso!
+
+        Você precisa alterar pelo menos o parâmetro obrigatório `SEAFILE_SERVER_HOSTNAME` para que este aplicativo funcione corretamente.
+        Seu valor deve ser um domínio (ou endereço IP) que aponte para este servidor (acessível pela WAN).
+
+        Senha padrão do banco `casaos` ideal seria altera a senha do mesmo para uma senha segura. 
   category: Cloud
   port_map: '8081'
