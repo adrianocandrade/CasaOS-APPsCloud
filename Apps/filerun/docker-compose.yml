@@ -29,10 +29,10 @@ services:
         target: /config
       - type: bind
         source: /DATA/AppData/filerun/html
-        target: /var/www/html
+        target: /app/filerun/html
       - type: bind
         source: /DATA/AppData/filerun/user-file
-        target: /user-files
+        target: /app/filerun/user-files
         
 x-casaos:
   architectures:
@@ -41,8 +41,18 @@ x-casaos:
     - arm64
   main: app
   description:
-    en_us: FileRun - Just like you do with an FTP server, point FileRun to where you keep the files on your server, and you will get instant web access to them.
-    pt_br: FileRun - Assim como você faz com um servidor FTP, aponte o FileRun para onde você mantém os arquivos em seu servidor e você obterá acesso instantâneo a eles pela Web.
+    en_us: |
+      Just like you do with an FTP server, point FileRun to where you keep the files on your server, and you will get instant web access to them.
+
+      Want to access your files also by other means you have configured (such as FTP or SMB for example)? No problem. Upload, download or manage the same files.
+
+      All changes made to the files using FTP or other methods reflect via FileRun without delay.
+    pt_br: |
+      Assim como você faz com um servidor FTP, aponte o FileRun para onde você mantém os arquivos em seu servidor e você obterá acesso instantâneo a eles pela Web.
+
+       Quer acessar seus arquivos também por outros meios que você configurou (como FTP ou SMB por exemplo)? Sem problemas. Carregue, baixe ou gerencie os mesmos arquivos.
+
+       Todas as alterações feitas nos arquivos usando FTP ou outros métodos são refletidas via FileRun sem demora.
   tagline:
     en_us: FileRun - Just like you do with an FTP server, point FileRun to where you keep the files on your server, and you will get instant web access to them.
     pt_br: FileRun - Assim como você faz com um servidor FTP, aponte o FileRun para onde você mantém os arquivos em seu servidor e você obterá acesso instantâneo a eles pela Web.
@@ -51,6 +61,12 @@ x-casaos:
   icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filerun.png
   thumbnail: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/filerun.png
   project_url: https://github.com/adrianocandrade/CasaOS-APPsCloud
+  screenshot_link:
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filerun/screenshot-1.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filerun/screenshot-2.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filerun/screenshot-3.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filerun/screenshot-4.png
+    - https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/screenshots/filerun/screenshot-5.png
   store_app_id: filerun
   title:
     en_us: FileRun
