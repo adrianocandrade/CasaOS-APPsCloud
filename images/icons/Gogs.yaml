@@ -1,0 +1,71 @@
+name: admiring_matthias
+services:
+  gogs:
+    cpu_shares: 90
+    command: []
+    depends_on:
+      postgres:
+        condition: service_started
+        required: true
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+      - RUN_CROND=true
+    image: gogs/gogs:latest
+    links:
+      - postgres
+    ports:
+      - target: 22
+        published: "10022"
+        protocol: tcp
+      - target: 3000
+        published: "3000"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/gogs/data
+        target: /data
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+    container_name: ""
+    hostname: ""
+  postgres:
+    cpu_shares: 90
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+      - POSTGRES_DB=gogs
+      - POSTGRES_PASSWORD=casaos
+      - POSTGRES_USER=gogs
+    image: postgres:9.5
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/gogs/postgresql/data
+        target: /var/lib/postgresql/data
+    ports: []
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+    container_name: ""
+    hostname: ""
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://raw.githubusercontent.com/adrianocandrade/CasaOS-APPsCloud/master/images/icons/gogs.png
+  index: /
+  port_map: "3000"
+  scheme: http
+  store_app_id: admiring_matthias
+  title:
+    custom: Gogs
