@@ -29,8 +29,6 @@ services:
       - type: bind
         source: /DATA/AppData/gogs/postgresql/data
         target: /var/lib/postgresql/data
-    networks:
-      - gogs
 x-casaos:
   architectures:
     - amd64
