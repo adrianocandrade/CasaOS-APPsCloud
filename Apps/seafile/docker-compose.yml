@@ -1,38 +1,6 @@
 name: seafile
 services:
-  db:
-    container_name: seafile-mysql
-    deploy:
-      resources:
-        limits:
-          memory: 512M
-    environment:
-      - MARIADB_AUTO_UPGRADE=1
-      - MYSQL_LOG_CONSOLE=true
-      - MYSQL_ROOT_PASSWORD=casaos
-    hostname: seafile-mysql
-    image: mariadb:10.11
-    restart: unless-stopped
-    volumes:
-      - type: bind
-        source: /DATA/AppData/seafile/db
-        target: /var/lib/mysql
-    network_mode: bridge
-  memcached:
-    container_name: seafile-memcached
-    deploy:
-      resources:
-        limits:
-          memory: 512M
-    entrypoint:
-      - memcached
-      - -m
-      - "256"
-    hostname: seafile-memcached
-    image: memcached:1.6.18
-    restart: unless-stopped
-    network_mode: bridge
-  seafile:
+    seafile:
     container_name: seafile
     depends_on:
       db:
@@ -64,6 +32,38 @@ services:
       - type: bind
         source: /opt/seafile-data
         target: /shared
+    network_mode: bridge
+  db:
+    container_name: seafile-mysql
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+      - MARIADB_AUTO_UPGRADE=1
+      - MYSQL_LOG_CONSOLE=true
+      - MYSQL_ROOT_PASSWORD=casaos
+    hostname: seafile-mysql
+    image: mariadb:10.11
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/seafile/db
+        target: /var/lib/mysql
+    network_mode: bridge
+  memcached:
+    container_name: seafile-memcached
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    entrypoint:
+      - memcached
+      - -m
+      - "256"
+    hostname: seafile-memcached
+    image: memcached:1.6.18
+    restart: unless-stopped
     network_mode: bridge
 x-casaos:
   architectures:
