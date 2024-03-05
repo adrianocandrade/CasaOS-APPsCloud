@@ -95,8 +95,8 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        Attention: Require MYSQL Database to complete installation.
+        Password Admin: demo
       pt_br: |
-        Atenção: Requer Banco de dados MYSQL para finalização da instalação. 
+        Senha Admin: demo
   category: Cloud
   port_map: '3321'
